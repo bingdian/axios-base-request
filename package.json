@@ -1,0 +1,49 @@
+{
+  "name": "axios-request",
+  "version": "1.0.0",
+  "description": "http request library based axios for the browser.",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --watch",
+    "build": "webpack",
+    "examples": "node ./examples/server.js",
+    "lint": "eslint ./src",
+    "test": "npm run lint && jest",
+    "test:watch": "jest --watch",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bingdian/axios-request.git"
+  },
+  "homepage": "https://github.com/bingdian/axios-request",
+  "author": "bingidan",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.5.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/runtime": "^7.5.4",
+    "axios": "^0.19.0",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "5.3.0",
+    "eslint-config-airbnb": "17.1.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.2",
+    "husky": "^3.0.1",
+    "jest": "^24.8.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
+  }
+}
