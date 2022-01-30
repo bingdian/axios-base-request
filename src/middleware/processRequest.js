@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export default function processRequest(context) {
   return axios(context.options)
     .then((response) => {

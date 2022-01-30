@@ -4,8 +4,14 @@ http request library based axios for the browser.
 
 ## Installing
 
-	<script src="axios.min.js"></script>
-	<script src="axios.base.request.js"></script>
+### Using npm:
+
+    import axiosBaseRequest from 'axios-base-request';
+
+### Using script tag:
+
+    <script src="axios.min.js"></script>
+    <script src="axios.base.request.js"></script>
 
 ## API
 

@@ -2,7 +2,7 @@
   "name": "axios-base-request",
   "version": "1.0.0",
   "description": "http request library based axios for the browser.",
-  "main": "src/index.js",
+  "main": "dist/main.js",
   "scripts": {
     "dev": "webpack-dev-server --open --watch",
     "build": "webpack --config build/webpack.config.js",
@@ -14,18 +14,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bingdian/axios-request.git"
+    "url": "https://github.com/bingdian/axios-base-request.git"
   },
-  "homepage": "https://github.com/bingdian/axios-request",
+  "homepage": "https://github.com/bingdian/axios-base-request",
   "author": "bingidan",
   "license": "MIT",
+  "dependencies": {
+    "axios": "^0.25.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-transform-object-assign": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/preset-env": "^7.5.5",
     "@babel/runtime": "^7.5.4",
-    "axios": "^0.25.0",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
