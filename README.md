@@ -1,5 +1,20 @@
 # axiosBaseRequest
 
+
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![Test coverage][codecov-image]][codecov-url]
+[![npm download][download-image]][download-url]
+
+[npm-image]: https://img.shields.io/npm/v/axios-base-request.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/axios-base-request
+[travis-image]: https://img.shields.io/travis/bingdian/axios-base-request.svg?style=flat-square
+[travis-url]: https://travis-ci.com/bingdian/axios-base-request
+[codecov-image]: https://img.shields.io/codecov/c/github/bingdian/axios-base-request.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/bingdian/axios-base-request?branch=master
+[download-image]: https://img.shields.io/npm/dm/axios-base-request.svg?style=flat-square
+[download-url]: https://npmjs.org/package/axios-base-request
+
 http request library based axios for the browser.
 
 ## Installing

@@ -1,0 +1,12 @@
+.idea/
+__mocks__/
+__test__/
+build/
+coverage/
+examples/
+node_modules/
+.eslintrc
+.gitignore
+.travis.yml
+jest.config.js
+package-lock.json
