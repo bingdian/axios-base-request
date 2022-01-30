@@ -6,11 +6,11 @@ function generateConfig(name) {
   const config = {
     entry: './src/index.js',
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, '../dist'),
       filename: `${name}.js`,
       sourceMapFilename: `${name}.map`,
       libraryExport: 'default',
-      library: 'axiosRequest',
+      library: 'axiosBaseRequest',
       libraryTarget: 'umd',
     },
     mode: 'development',
@@ -44,6 +44,6 @@ function generateConfig(name) {
 }
 
 module.exports = [
-  generateConfig('axios.request.min'),
-  generateConfig('axios.request'),
+  generateConfig('axios.base.request.min'),
+  generateConfig('axios.base.request'),
 ];

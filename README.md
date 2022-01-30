@@ -1,23 +1,24 @@
-# axiosRequest
+# axiosBaseRequest
 
 http request library based axios for the browser.
 
 ## Installing
 
 	<script src="axios.min.js"></script>
-	<script src="axios.request.js"></script>
-	
+	<script src="axios.base.request.js"></script>
+
 ## API
 
-### axiosRequest.use(fn)
+### axiosBaseRequest.use(fn)
 
 Use middleware function
 
-### axiosRequest.request(config)
+### axiosBaseRequest.request(config)
 
 Send http request.
-    
-The `config` param is same as `axios` [https://github.com/axios/axios#request-config](https://github.com/axios/axios#request-config)
+
+The `config` param is same
+as `axios` [https://github.com/axios/axios#request-config](https://github.com/axios/axios#request-config)
 
 ## Example
 
@@ -29,7 +30,7 @@ The `config` param is same as `axios` [https://github.com/axios/axios#request-co
     }
     
     // process response data
-    function transfromResponseMiddleware(context, next) {
+    function transformResponseMiddleware(context, next) {
       return next()
         .then(() => {
           const { response } = context;
@@ -44,11 +45,11 @@ The `config` param is same as `axios` [https://github.com/axios/axios#request-co
     }
 
 	// use middleware
-	axiosRequest.use(signMiddleware);
-	axiosRequest.use(transfromResponseMiddleware);
+	axiosBaseRequest.use(signMiddleware);
+	axiosBaseRequest.use(transformResponseMiddleware);
 	
 	// request
-	axiosRequest.request({
+	axiosBaseRequest.request({
 	  url: '/api/users',
 	  method: 'get'
 	}).then((response) => {

@@ -1,9 +1,9 @@
 (function () {
-  axiosRequest.use(processHeader);
-  axiosRequest.use(processRequest);
-  axiosRequest.use(transformResponse);
+  axiosBaseRequest.use(processHeader);
+  axiosBaseRequest.use(processRequest);
+  axiosBaseRequest.use(transformResponse);
 
-  axiosRequest.request({
+  axiosBaseRequest.request({
     url: './data/users.json',
   }).then((response) => {
     console.log(response);

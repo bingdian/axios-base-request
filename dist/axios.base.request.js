@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["axiosRequest"] = factory();
+		exports["axiosBaseRequest"] = factory();
 	else
-		root["axiosRequest"] = factory();
+		root["axiosBaseRequest"] = factory();
 })(window, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -109,7 +109,7 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-module.exports = _classCallCheck;
+module.exports = _classCallCheck, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -133,10 +133,13 @@ function _defineProperties(target, props) {
 function _createClass(Constructor, protoProps, staticProps) {
   if (protoProps) _defineProperties(Constructor.prototype, protoProps);
   if (staticProps) _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
   return Constructor;
 }
 
-module.exports = _createClass;
+module.exports = _createClass, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -160,12 +163,11 @@ function _extends() {
     }
 
     return target;
-  };
-
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
   return _extends.apply(this, arguments);
 }
 
-module.exports = _extends;
+module.exports = _extends, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -260,11 +262,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var AxiosRequest =
-/*#__PURE__*/
-function () {
-  function AxiosRequest(options) {
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, AxiosRequest);
+var AxiosBaseRequest = /*#__PURE__*/function () {
+  function AxiosBaseRequest(options) {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, AxiosBaseRequest);
 
     this.options = options || {};
     this.middleware = this.middleware || [];
@@ -278,7 +278,7 @@ function () {
    */
 
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(AxiosRequest, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(AxiosBaseRequest, [{
     key: "use",
     value: function use(fn) {
       if (typeof fn !== 'function') {
@@ -309,10 +309,10 @@ function () {
     }
   }]);
 
-  return AxiosRequest;
+  return AxiosBaseRequest;
 }();
 
-/* harmony default export */ __webpack_exports__["default"] = (AxiosRequest);
+/* harmony default export */ __webpack_exports__["default"] = (AxiosBaseRequest);
 
 /***/ }),
 
@@ -327,8 +327,8 @@ function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core */ "./src/core.js");
 
-var axiosRequest = new _core__WEBPACK_IMPORTED_MODULE_0__["default"]();
-/* harmony default export */ __webpack_exports__["default"] = (axiosRequest);
+var axiosBaseRequest = new _core__WEBPACK_IMPORTED_MODULE_0__["default"]();
+/* harmony default export */ __webpack_exports__["default"] = (axiosBaseRequest);
 
 /***/ }),
 
@@ -359,4 +359,4 @@ function processRequest(context) {
 
 /******/ })["default"];
 });
-//# sourceMappingURL=axios.request.map
+//# sourceMappingURL=axios.base.request.map

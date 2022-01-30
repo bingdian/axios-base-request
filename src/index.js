@@ -1,5 +1,5 @@
-import AxiosRequest from './core';
+import AxiosBaseRequest from './core';
 
-const axiosRequest = new AxiosRequest();
+const axiosBaseRequest = new AxiosBaseRequest();
 
-export default axiosRequest;
+export default axiosBaseRequest;

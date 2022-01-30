@@ -1,7 +1,7 @@
 import compose from './compose';
 import processRequest from './middleware/processRequest';
 
-class AxiosRequest {
+class AxiosBaseRequest {
   constructor(options) {
     this.options        = options || {};
     this.middleware     = this.middleware || [];
@@ -36,4 +36,4 @@ class AxiosRequest {
   }
 }
 
-export default AxiosRequest;
+export default AxiosBaseRequest;

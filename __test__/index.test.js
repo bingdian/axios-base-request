@@ -1,51 +1,51 @@
-import AxiosRequest from '../src/core';
-import axiosRequest from '../src/index';
+import AxiosBaseRequest from '../src/core';
+import axiosBaseRequest from '../src/index';
 
-let axiosRequestInstance;
+let axiosBaseRequestInstance;
 
 beforeEach(() => {
-  axiosRequestInstance = new AxiosRequest();
+  axiosBaseRequestInstance = new AxiosBaseRequest();
 });
 
 afterEach(() => {
-  axiosRequestInstance = null;
+  axiosBaseRequestInstance = null;
 });
 
-describe('axiosRequest', () => {
-  it('should axiosReques instanceof AxiosRequest', () => {
-    expect(axiosRequest instanceof AxiosRequest).toBe(true);
+describe('axiosBaseRequest', () => {
+  it('should axiosReques instanceof AxiosBaseRequest', () => {
+    expect(axiosBaseRequest instanceof AxiosBaseRequest).toBe(true);
   });
 });
 
-describe('AxiosRequest.use', () => {
-  it('should return AxiosRequest instance when argument is function', () => {
+describe('AxiosBaseRequest.use', () => {
+  it('should return AxiosBaseRequest instance when argument is function', () => {
     const mockFn = jest.fn();
-    expect(axiosRequestInstance.use(mockFn)).toBe(axiosRequestInstance);
+    expect(axiosBaseRequestInstance.use(mockFn)).toBe(axiosBaseRequestInstance);
   });
 
   it('should throw error when argument is not function ', () => {
     expect(() => {
-      axiosRequestInstance.use();
+      axiosBaseRequestInstance.use();
     }).toThrowError('Middleware must be composed of functions!');
 
     expect(() => {
-      axiosRequestInstance.use('string');
+      axiosBaseRequestInstance.use('string');
     }).toThrowError('Middleware must be composed of functions!');
 
     expect(() => {
-      axiosRequestInstance.use(100);
+      axiosBaseRequestInstance.use(100);
     }).toThrowError('Middleware must be composed of functions!');
 
     expect(() => {
-      axiosRequestInstance.use({});
+      axiosBaseRequestInstance.use({});
     }).toThrowError('Middleware must be composed of functions!');
 
     expect(() => {
-      axiosRequestInstance.use([]);
+      axiosBaseRequestInstance.use([]);
     }).toThrowError('Middleware must be composed of functions!');
 
     expect(() => {
-      axiosRequestInstance.use(null);
+      axiosBaseRequestInstance.use(null);
     }).toThrowError('Middleware must be composed of functions!');
   });
 
@@ -54,18 +54,18 @@ describe('AxiosRequest.use', () => {
     const mockFn2 = jest.fn();
     const mockFn3 = jest.fn();
 
-    axiosRequestInstance.use(mockFn1);
-    axiosRequestInstance.use(mockFn2);
-    axiosRequestInstance.use(mockFn3);
+    axiosBaseRequestInstance.use(mockFn1);
+    axiosBaseRequestInstance.use(mockFn2);
+    axiosBaseRequestInstance.use(mockFn3);
 
-    expect(axiosRequestInstance.middleware.length).toEqual(3);
-    expect(axiosRequestInstance.middleware[0]).toEqual(mockFn1);
-    expect(axiosRequestInstance.middleware[1]).toEqual(mockFn2);
-    expect(axiosRequestInstance.middleware[2]).toEqual(mockFn3);
+    expect(axiosBaseRequestInstance.middleware.length).toEqual(3);
+    expect(axiosBaseRequestInstance.middleware[0]).toEqual(mockFn1);
+    expect(axiosBaseRequestInstance.middleware[1]).toEqual(mockFn2);
+    expect(axiosBaseRequestInstance.middleware[2]).toEqual(mockFn3);
   });
 });
 
-describe('AxiosRequest.request', () => {
+describe('AxiosBaseRequest.request', () => {
   it('should process middleware function ', (done) => {
     const order = [];
 
@@ -79,8 +79,8 @@ describe('AxiosRequest.request', () => {
       });
     }
 
-    function transfromResponseMiddleware(context, next) {
-      order.push('preTransfromResponse');
+    function transformResponseMiddleware(context, next) {
+      order.push('preTransformResponse');
       return next()
         .then(() => {
           const { response } = context;
@@ -90,14 +90,14 @@ describe('AxiosRequest.request', () => {
             status,
             data,
           };
-          order.push('postTransfromResponse');
+          order.push('postTransformResponse');
           return context;
         });
     }
 
-    axiosRequestInstance.use(signMiddleware);
-    axiosRequestInstance.use(transfromResponseMiddleware);
-    axiosRequestInstance.request({
+    axiosBaseRequestInstance.use(signMiddleware);
+    axiosBaseRequestInstance.use(transformResponseMiddleware);
+    axiosBaseRequestInstance.request({
       url: '/api/user',
     }).then((response) => {
       expect(response.config.headers['x-sign']).toEqual('123456');
@@ -110,8 +110,8 @@ describe('AxiosRequest.request', () => {
       expect(order).toEqual(
         [
           'preSignMiddleware',
-          'preTransfromResponse',
-          'postTransfromResponse',
+          'preTransformResponse',
+          'postTransformResponse',
           'postSignMiddleware',
         ],
       );
