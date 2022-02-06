@@ -1,6 +1,6 @@
 {
   "name": "axios-base-request",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "http request library based axios for the browser.",
   "main": "dist/main.js",
   "scripts": {
@@ -20,7 +20,8 @@
   "author": "bingidan",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.25.0"
+    "axios": "^0.25.0",
+    "axios-base-request": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

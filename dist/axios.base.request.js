@@ -2679,7 +2679,7 @@ var AxiosBaseRequest = /*#__PURE__*/function () {
       var _this = this;
 
       var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      this.options = _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, options, this.options);
+      this.options = _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, options);
       return Promise.resolve().then(function () {
         return Object(_compose__WEBPACK_IMPORTED_MODULE_3__["default"])(_this.middleware.concat(_this.coreMiddleware))(_this);
       }).then(function () {

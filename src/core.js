@@ -28,7 +28,7 @@ class AxiosBaseRequest {
    * @param {Object} options
    */
   request(options = {}) {
-    this.options = Object.assign({}, options, this.options);
+    this.options = Object.assign({}, options);
 
     return Promise.resolve()
       .then(() => compose(this.middleware.concat(this.coreMiddleware))(this))
