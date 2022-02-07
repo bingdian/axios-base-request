@@ -5,8 +5,9 @@
       .then(() => {
         log('transformResponse middleware end');
         const { response } = context;
-        const data         = response && response.data;
-        const status       = response && response.status;
+        const data = response && response.data;
+        const status = response && response.status;
+
         response.data = {
           status,
           data,

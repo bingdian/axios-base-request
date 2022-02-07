@@ -9,7 +9,7 @@
 [npm-image]: https://img.shields.io/npm/v/axios-base-request.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/axios-base-request
 [travis-image]: https://img.shields.io/travis/bingdian/axios-base-request.svg?style=flat-square
-[travis-url]: https://travis-ci.com/bingdian/axios-base-request
+[travis-url]: https://app.travis-ci.com/bingdian/axios-base-request
 [codecov-image]: https://img.shields.io/codecov/c/github/bingdian/axios-base-request.svg?style=flat-square
 [codecov-url]: https://codecov.io/github/bingdian/axios-base-request?branch=master
 [download-image]: https://img.shields.io/npm/dm/axios-base-request.svg?style=flat-square
@@ -25,7 +25,6 @@ http request library based axios for the browser.
 
 ### Using script tag:
 
-    <script src="axios.min.js"></script>
     <script src="axios.base.request.js"></script>
 
 ## API

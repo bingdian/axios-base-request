@@ -29,7 +29,7 @@ function compose(middleware) {
       if (i <= index) {
         return Promise.reject(new Error('next() called multiple times'));
       }
-      index  = i;
+      index = i;
       let fn = middleware[i];
       if (i === middleware.length) {
         fn = next;

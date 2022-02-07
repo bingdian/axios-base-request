@@ -3,8 +3,8 @@ import processRequest from './middleware/processRequest';
 
 class AxiosBaseRequest {
   constructor(options) {
-    this.options        = options || {};
-    this.middleware     = this.middleware || [];
+    this.options = options || {};
+    this.middleware = this.middleware || [];
     this.coreMiddleware = this.coreMiddleware || [];
     this.coreMiddleware.push(processRequest);
   }
@@ -28,7 +28,7 @@ class AxiosBaseRequest {
    * @param {Object} options
    */
   request(options = {}) {
-    this.options = Object.assign({}, options);
+    this.options = { ...options };
 
     return Promise.resolve()
       .then(() => compose(this.middleware.concat(this.coreMiddleware))(this))
