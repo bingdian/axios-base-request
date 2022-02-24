@@ -1,6 +1,6 @@
 {
   "name": "axios-base-request",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "http request library based axios for the browser.",
   "main": "dist/main.js",
   "scripts": {
