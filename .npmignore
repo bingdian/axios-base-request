@@ -5,6 +5,7 @@ build/
 coverage/
 examples/
 node_modules/
+.github
 .eslintrc
 .gitignore
 .travis.yml

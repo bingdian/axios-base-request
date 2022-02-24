@@ -2,14 +2,15 @@
 
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
+[![Continuous Integration][ci-image]][ci-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
 
+
 [npm-image]: https://img.shields.io/npm/v/axios-base-request.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/axios-base-request
-[travis-image]: https://img.shields.io/travis/bingdian/axios-base-request.svg?style=flat-square
-[travis-url]: https://app.travis-ci.com/bingdian/axios-base-request
+[ci-image]: https://github.com/bingdian/axios-base-request/workflows/CI/badge.svg?branch=master&event=push
+[ci-url]: https://github.com/bingdian/axios-base-request/actions?query=branch%3Amaster
 [codecov-image]: https://img.shields.io/codecov/c/github/bingdian/axios-base-request.svg?style=flat-square
 [codecov-url]: https://codecov.io/github/bingdian/axios-base-request?branch=master
 [download-image]: https://img.shields.io/npm/dm/axios-base-request.svg?style=flat-square
