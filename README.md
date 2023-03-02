@@ -22,9 +22,23 @@ http request library based axios for the browser.
 
 ### Using npm:
 
+```
+npm install axios-base-request --save
+```
+
+### Using yarn:
+
+```
+yarn add axios-base-request 
+```
+
+## Usage
+
+Once the package is installed, you can `import` the library using import:
+
     import axiosBaseRequest from 'axios-base-request';
 
-### Using script tag:
+or you can use script tag:
 
     <script src="axios.base.request.js"></script>
 
